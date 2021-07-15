@@ -79,10 +79,10 @@ ddr_field_specs <- function() {
 ddr_file_name <- function (date, asset_class) {
   asset_map <- c("CR" = "CREDITS", 'EQ' = "EQUITIES", 'FX' = "FOREX",
     'IR' = "RATES", 'CO' = "COMMODITIES")
-  paste0("CUMULATIVE_", asset_map[asset_class], "_", format(date, "%Y_%m_%d"))
+  paste0("CFTC_CUMULATIVE_", asset_map[asset_class], "_", format(date, "%Y_%m_%d"))
 }
 
 ddr_url <- function (date, asset_class) {
-  stump <- "https://kgc0418-tdw-data2-0.s3.amazonaws.com/cftc/eod"
+  stump <- "https://kgc0418-tdw-data-0.s3.amazonaws.com/cftc/eod/"
   paste0(stump, ddr_file_name(date, asset_class), ".zip")
 }
