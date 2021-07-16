@@ -82,6 +82,7 @@ ddr_file_name <- function (date, asset_class) {
   paste0("CFTC_CUMULATIVE_", asset_map[asset_class], "_", format(date, "%Y_%m_%d"))
 }
 
+#' @export
 ddr_url <- function (date, asset_class) {
   stump <- "https://kgc0418-tdw-data-0.s3.amazonaws.com/cftc/eod/"
   paste0(stump, ddr_file_name(date, asset_class), ".zip")
